@@ -23,6 +23,8 @@ public class Gambler_Simulator {
 		System.out.println("total days lost money: " +gambleObj.lostDays);
 		System.out.println("total days gained money: " +gambleObj.wonDays);
 		
+		System.out.println();
+		
 		System.out.println("On Day " +gambleObj.maxLossesday +" you lost the maximum ");
 		System.out.println("where you lost " +Math.floor(gambleObj.maxLosses) +" percent of all the times you played that day");
 		
