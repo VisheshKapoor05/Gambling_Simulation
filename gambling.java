@@ -28,11 +28,14 @@ public class gambling {
 		}
 		
 		//adding total number or days won or lost
-		if(balance>100)
+		if(balance>100) {
 			wonDays++;
-		else
+			System.out.print("won by: ");
+		}
+		else {
 			lostDays++;
-		
+			System.out.print("lost by: ");
+		}
 		
 		return balance;
 	}

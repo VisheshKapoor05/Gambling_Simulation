@@ -14,14 +14,14 @@ public class Gambler_Simulator {
 		int AmountWonOrLost;
 		
 		//playing for a month
-		for(int i=0; i<30; i++)
+		for(int day=1; day<=30; day++)
 		{
 			dailybalance = gambleObj.dailyplay(dailyStake,BET);
 			AmountWonOrLost = dailyStake - dailybalance;
-			System.out.println("Amount won or lost (-ve:lost +ve:Won) " +AmountWonOrLost);
+			System.out.println(AmountWonOrLost +" on day" +day);
 		}
-		System.out.println("total days game lost: " +gambleObj.lostDays);
-		System.out.println("total days game won: " +gambleObj.wonDays);
+		System.out.println("total days lost money: " +gambleObj.lostDays);
+		System.out.println("total days gained money: " +gambleObj.wonDays);
 		
 	}
 
