@@ -8,26 +8,20 @@ public class Gambler_Simulator {
 		final int BET = 1;           //defining Constant variable for bet per play
 		// or Bet_Per_Game = 1;
 		
-		int LOSE = 0;
+		gambling gambleObj = new gambling();
 		
-		//checking for limits of dailyStake
-		while(dailyStake>50 && dailyStake<150)
+		//playing for 20 days and getting total amount won or lost
+		int dailybalance;
+		int AmountWonOrLost;
+		int totalAmountWonOrLost = 0;
+		for(int i=0; i<20; i++)
 		{
-			//getting random value for play (0 or 1)
-			int play = (int) (Math.random()*10)%2;
-			
-			//Checking for win and lose
-			if(play == LOSE)
-			{	
-				dailyStake -=  BET ;
-			}
-			else                     // play = 1 which means a win
-			{
-				dailyStake += BET ;
-			}
-				
+			dailybalance = gambleObj.dailyplay(dailyStake,BET);
+			System.out.println(dailybalance);
+			AmountWonOrLost = dailyStake - dailybalance;
+			totalAmountWonOrLost += AmountWonOrLost;	
 		}
-		System.out.println("New Balance: " +dailyStake);
+		System.out.println("Total Amount won or lose (-ve show lost amount, +ve shows won amount: " +totalAmountWonOrLost);
 		
 	}
 
