@@ -2,9 +2,13 @@ package Gambling_Simulation;
 
 public class gambling {
 	
+	int lostDays = 0;
+	int wonDays = 0;
 	int LOSE = 0;
+	
 	public int dailyplay(int dailyStake, int BET) {
 		int balance = dailyStake;
+		
 		//checking for limits of dailyStake
 		while(balance>50 && balance<150)
 		{
@@ -22,6 +26,14 @@ public class gambling {
 			}
 						
 		}
+		
+		//adding total number or days won or lost
+		if(balance>100)
+			wonDays++;
+		else
+			lostDays++;
+		
+		
 		return balance;
 	}
 }
