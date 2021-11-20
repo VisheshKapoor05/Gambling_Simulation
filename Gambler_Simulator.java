@@ -16,13 +16,21 @@ public class Gambler_Simulator {
 		//playing for a month
 		for(int day=1; day<=30; day++)
 		{
-			dailybalance = gambleObj.dailyplay(dailyStake,BET);
+			dailybalance = gambleObj.dailyplay(dailyStake, BET, day);
 			AmountWonOrLost = dailyStake - dailybalance;
-			System.out.println(AmountWonOrLost +" on day" +day);
+			//System.out.println(AmountWonOrLost +" on day" +day);
 		}
 		System.out.println("total days lost money: " +gambleObj.lostDays);
 		System.out.println("total days gained money: " +gambleObj.wonDays);
 		
+		System.out.println("On Day " +gambleObj.maxLossesday +" you lost the maximum ");
+		System.out.println("where you lost " +Math.floor(gambleObj.maxLosses) +" percent of all the times you played that day");
+		
+		System.out.println();
+		
+		System.out.println("On Day " +gambleObj.maxWinsday +" you won the maximum ");
+		System.out.println("where you won " +Math.floor(gambleObj.maxWins) +" percent of all the times you played that day");
+
 	}
 
 }
